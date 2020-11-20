@@ -1,7 +1,7 @@
 package com.essences;
 
 public enum CandyTasteType {
-    LIMON,
+    LEMON,
     MINTY,
     WATERMELON,
     FRUIT_MIX,

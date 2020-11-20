@@ -11,17 +11,39 @@ package com.essences;
 */
 
 
+import com.fabric.SweetsFabric;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class NewYearGift {
 
     List<Sweets> listOfSweets = new ArrayList<>();
     private int giftWeight;
+    private int giftPrice;
+    private int countOfSweets;
 
-    public NewYearGift(int giftWeight) {
-        this.giftWeight = giftWeight;
+    private NewYearGift() {
     }
+
+    public static NewYearGift makeGiftByWeight(double giftWeight) {
+        NewYearGift newYearGift = new NewYearGift();
+        Random random = new Random();
+        double weight = 0;
+
+        SweetsFabric sweetsFabric = new SweetsFabric();
+        while (weight < giftWeight) {
+
+            newYearGift.listOfSweets.add(sweetsFabric.createSweet(SweetType.values()[random.nextInt(SweetType.values().length)]));
+            newYearGift.countOfSweets++;
+            weight += newYearGift.listOfSweets.get(newYearGift.countOfSweets - 1).sweetWeight;
+
+        }
+        return newYearGift;
+
+    }
+
 
     public int getGiftWeight() {
         return giftWeight;
@@ -29,5 +51,13 @@ public class NewYearGift {
 
     public void setGiftWeight(int giftWeight) {
         this.giftWeight = giftWeight;
+    }
+
+    public int getGiftPrice() {
+        return giftPrice;
+    }
+
+    public void setGiftPrice(int giftPrice) {
+        this.giftPrice = giftPrice;
     }
 }
