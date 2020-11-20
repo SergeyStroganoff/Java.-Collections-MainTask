@@ -16,8 +16,8 @@ import java.util.List;
 
 public class NewYearGift {
 
-    private int giftWeight;
     List<Sweets> listOfSweets = new ArrayList<>();
+    private int giftWeight;
 
     public NewYearGift(int giftWeight) {
         this.giftWeight = giftWeight;

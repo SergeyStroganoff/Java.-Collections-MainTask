@@ -21,7 +21,7 @@ public class SweetsFabric {
             new Candy("Сливочная", 3.30, CandyTasteType.Milk, CandySizeType.MEDIUM),
             new ChupaChups(6.5, CandyTasteType.CCOFEMILK),
             new ChupaChups(6.3, CandyTasteType.Milk),
-            new ChupaChups(6, CandyTasteType.WATERMELON),
+            new ChupaChups(6, CandyTasteType.WATERMELON)
 
             );
 

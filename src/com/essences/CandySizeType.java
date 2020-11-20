@@ -10,7 +10,6 @@ public enum CandySizeType {
     public double CandySizeTypeWeight;
 
 
-
     CandySizeType(double CandySizeTypeWeight) {
 
         this.CandySizeTypeWeight = CandySizeTypeWeight;
