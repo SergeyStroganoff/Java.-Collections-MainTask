@@ -13,6 +13,22 @@ public class Sweets {
         this.sweetWeight = sweetWeight;
         this.sweetPrice = sweetPrice;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getAmountSugar() {
+        return amountSugar;
+    }
+
+    public double getSweetWeight() {
+        return sweetWeight;
+    }
+
+    public double getSweetPrice() {
+        return sweetPrice;
+    }
 }
 
 

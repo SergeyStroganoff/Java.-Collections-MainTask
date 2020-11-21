@@ -8,6 +8,8 @@ import java.util.Random;
 
 public class SweetsFabric {
 
+    public final String fabricName;
+
     static List<? extends Candy> candyList = Arrays.asList(
             new Candy("Лемонный сад", 2.45, CandyTasteType.LEMON, CandySizeType.MEDIUM),
             new Candy("Лемонный сад", 2.75, CandyTasteType.LEMON, CandySizeType.BIG),
@@ -33,6 +35,10 @@ public class SweetsFabric {
             new ChocolateSweet("Черный барон", 25, 10.5, 17.8, ChocolateType.BLACK_CHOCOLATE, 58, "Капучино"),
             new ChocolateSweet("Шоко-Моко", 37, 18.5, 19.5, ChocolateType.BLACK_CHOCOLATE, 48, "Кофейный мусс")
     );
+
+    public SweetsFabric(String fabricName) {
+        this.fabricName = fabricName;
+    }
 
     public Sweets createSweet(SweetType type) {
 
