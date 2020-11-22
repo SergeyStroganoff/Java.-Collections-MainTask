@@ -10,6 +10,12 @@ public class SweetsFabric {
 
     public final String fabricName;
 
+    static {
+
+        ChupaChups.setBrendTaxChupaChups(8); // где стоить устанавливать производственные коифициены;
+        Candy.setIndexWeightCandy(2.5);
+    }
+
     static List<? extends Candy> candyList = Arrays.asList(
             new Candy("Лемонный сад", 2.45, CandyTasteType.LEMON, CandySizeType.MEDIUM),
             new Candy("Лемонный сад", 2.75, CandyTasteType.LEMON, CandySizeType.BIG),
@@ -41,6 +47,7 @@ public class SweetsFabric {
     }
 
     public Sweets createSweet(SweetType type) {
+
 
         Random random = new Random();
         Sweets sweet = null;

@@ -19,6 +19,8 @@ public class GiftFabric {
     public List<NewYearGift> arrayNewYearGift = new ArrayList<>();
 
     public NewYearGift makeGiftByWeight(SweetsFabric sweetsFabric, double giftWeight) {   // статический метод или создвать экземляр фабрики
+
+        if (giftWeight<=0) return null; // что лучьше, возвращать null, exception, или устанавливать свой вес. ?
         List<Sweets> tempListSweets = new ArrayList<>();
         Random randomSweet = new Random();
         double weight = 0;
@@ -30,10 +32,6 @@ public class GiftFabric {
                 tempListSweets.add(sweet);
             }
         }
-
         return NewYearGift.createNewYearGift(tempListSweets);
-
     }
-
-
 }

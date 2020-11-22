@@ -13,8 +13,9 @@ package com.essences;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class NewYearGift {
+public class NewYearGift implements Validate {
 
     public static NewYearGift newYearGift;
 
@@ -64,4 +65,31 @@ public class NewYearGift {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NewYearGift that = (NewYearGift) o;
+        return Double.compare(that.giftWeight, giftWeight) == 0 &&
+                giftPrice == that.giftPrice &&
+                countOfSweets == that.countOfSweets &&
+                Objects.equals(listOfSweets, that.listOfSweets);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(listOfSweets, giftWeight, giftPrice, countOfSweets);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Новогодний подарок." + " Общий вес: " + giftWeight +
+                ", Стоимость подарска" + giftPrice + ", колличество сладостей: " + countOfSweets;
+    }
+
+    @Override
+    public void unpackAndValidate() {
+        System.out.println("Распаковываем и проверяем подарок: " + newYearGift.toString());
+    }
 }

@@ -1,16 +1,17 @@
 package com.essences;
 
+import java.util.Objects;
+
 public class Candy extends Sweets {
 
     CandyTasteType tasteOfCandy;
     CandySizeType candySizeType;
 
-    private static double amountCandySugarPercent;
-    private static double indexWeightCandy;
+    public static double indexWeightCandy;
 
     public Candy(String name, double sweetprice, CandyTasteType tasteOfCandy, CandySizeType candySizeType) { // как осуществить расчеты не в конструкторе
 
-        super(name, candySizeType.CandySizeTypeWeight * indexWeightCandy * amountCandySugarPercent / 100, candySizeType.CandySizeTypeWeight * indexWeightCandy, sweetprice);  // как установить проверку amountCandySugarPercent ?
+        super(name, 98, candySizeType.CandySizeTypeWeight * indexWeightCandy, sweetprice);  // как установить проверку amountCandySugarPercent ?
         this.tasteOfCandy = tasteOfCandy;
         this.candySizeType = candySizeType;
     }
@@ -18,18 +19,34 @@ public class Candy extends Sweets {
     Candy(double sweetPrice, CandyTasteType tasteOfCandy) {
         super("Chupa Chups", 95, 12, sweetPrice);
         this.tasteOfCandy = tasteOfCandy;
+        this.candySizeType = CandySizeType.MEDIUM;
     }
 
-    public static void setAmountCandySugarPercent(double amountCandySugarPercent) {
-
-        if (amountCandySugarPercent <= 0 && amountCandySugarPercent > 100) Candy.amountCandySugarPercent = 99;
-        Candy.amountCandySugarPercent = amountCandySugarPercent;
-    }
 
     public static void setIndexWeightCandy(double indexWeightCandy) {
         if (indexWeightCandy <= 0) Candy.indexWeightCandy = 1;
         Candy.indexWeightCandy = indexWeightCandy;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Candy candy = (Candy) o;
+        return tasteOfCandy == candy.tasteOfCandy &&
+                candySizeType == candy.candySizeType;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tasteOfCandy, candySizeType);
+    }
+
+    @Override
+    public String toString() {
+        return "Леденец: " + name + ", Вкус: " + tasteOfCandy.CandyTasteTypeName + ", размер леденца: " + candySizeType.CandySizeTypeWeightName +
+                ", содержание сахара: " + amountSugar +"%" + ", вес леденца: " + sweetWeight +
+                ", цена леденца:" + sweetPrice;
+    }
 }

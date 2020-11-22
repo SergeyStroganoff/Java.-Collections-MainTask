@@ -1,10 +1,17 @@
 package com.essences;
 
 public enum CandyTasteType {
-    LEMON,
-    MINTY,
-    WATERMELON,
-    FRUIT_MIX,
-    Milk,
-    CCOFEMILK
+    LEMON("Лемонный"),
+    MINTY("Мятный"),
+    WATERMELON("Арбуз"),
+    FRUIT_MIX("Фруктовый миикс"),
+    Milk("Сливочный"),
+    CCOFEMILK("Кофе с молоком");
+
+
+    public String CandyTasteTypeName;
+
+    CandyTasteType(String candyTasteTypeName) {
+        CandyTasteTypeName = candyTasteTypeName;
+    }
 }

@@ -13,10 +13,12 @@ public class ChocolateSweet extends ChocolateBar {
 
 
     public String getSweetFiller() {
+
         return sweetFiller;
     }
 
     public void setSweetFiller(String sweetFiller) {
+
         this.sweetFiller = sweetFiller;
     }
 
@@ -31,14 +33,15 @@ public class ChocolateSweet extends ChocolateBar {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(sweetFiller);
     }
 
     @Override
     public String toString() {
-        return "Шоколадная конфета:" + this.name + " содержание сахара " + amountSugar + "тип шоколада: "
-                + super.getChocolateType() + " содержание какао: " + super.getPercentChocolate()
-                + " наполнитель: " + getSweetFiller();
+        return "Шоколадная конфета:" + this.name + ", содержание сахара " + amountSugar + ", тип шоколада: "
+                + super.getChocolateType().ChocolateTypeName + ", содержание какао: " + super.getPercentChocolate()
+                + ", наполнитель: " + getSweetFiller();
 
     }
 }

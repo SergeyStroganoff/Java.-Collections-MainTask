@@ -1,6 +1,8 @@
 package com.essences;
 
-public class Sweets {
+import java.util.Objects;
+
+public class Sweets implements Validate {
 
     protected String name;
     protected double amountSugar;
@@ -28,6 +30,33 @@ public class Sweets {
 
     public double getSweetPrice() {
         return sweetPrice;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sweets sweets = (Sweets) o;
+        return Double.compare(sweets.amountSugar, amountSugar) == 0 &&
+                Double.compare(sweets.sweetWeight, sweetWeight) == 0 &&
+                Double.compare(sweets.sweetPrice, sweetPrice) == 0 &&
+                Objects.equals(name, sweets.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, amountSugar, sweetWeight, sweetPrice);
+    }
+
+    @Override
+    public String toString() {
+        return "Сладость:" + getName() + ", Содержание сахара:" + getAmountSugar() + "%" + ", вес:" + getSweetWeight() +
+                ", цена:" + getSweetPrice();
+    }
+
+    @Override
+    public void unpackAndValidate() {
+        System.out.println("Распаковываем и проверяем сладость: " + this.toString());
     }
 }
 
