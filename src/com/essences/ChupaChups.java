@@ -14,11 +14,11 @@ public class ChupaChups extends Candy {
 
     @Override
     public String toString() {
-        return  "Чупа чупс" + ", вкус:" + this.tasteOfCandy.CandyTasteTypeName + ", размер:" + this.candySizeType.CandySizeTypeWeightName +
-              ", содержание сахара:" + amountSugar + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;
+        return "Чупа чупс" + ", вкус:" + this.tasteOfCandy.CandyTasteTypeName + ", размер:" + this.candySizeType.CandySizeTypeWeightName +
+                ", содержание сахара:" + amountSugar + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;
     }
 }
 
 
- //return "Чупа чупс" + ", вкус:" + this.tasteOfCandy.CandyTasteTypeName + ", размер:" + this.candySizeType.CandySizeTypeWeightName +
- //        ", содержание сахара:" + amountSugar + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;
+//return "Чупа чупс" + ", вкус:" + this.tasteOfCandy.CandyTasteTypeName + ", размер:" + this.candySizeType.CandySizeTypeWeightName +
+//        ", содержание сахара:" + amountSugar + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;

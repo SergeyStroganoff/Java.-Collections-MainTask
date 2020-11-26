@@ -46,7 +46,7 @@ public class Candy extends Sweets {
     @Override
     public String toString() {
         return "Леденец: " + name + ", Вкус: " + tasteOfCandy.CandyTasteTypeName + ", размер леденца: " + candySizeType.CandySizeTypeWeightName +
-                ", содержание сахара: " + amountSugar +"%" + ", вес леденца: " + sweetWeight +
+                ", содержание сахара: " + amountSugar + "%" + ", вес леденца: " + sweetWeight +
                 ", цена леденца:" + sweetPrice;
     }
 }

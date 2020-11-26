@@ -8,7 +8,6 @@ public enum CandyTasteType {
     Milk("Сливочный"),
     CCOFEMILK("Кофе с молоком");
 
-
     public String CandyTasteTypeName;
 
     CandyTasteType(String candyTasteTypeName) {

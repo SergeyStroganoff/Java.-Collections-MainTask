@@ -14,6 +14,7 @@ public class ChocolateBar extends Sweets {
         this.percentChocolate = percentChocolate;
 
     }
+
     public ChocolateType getChocolateType() {
         return chocolateBarType;
     }
@@ -39,6 +40,6 @@ public class ChocolateBar extends Sweets {
     @Override
     public String toString() {
         return "Плита шоколада: " + this.name + ", содержание сахара: " + amountSugar + ", тип шоколада: "
-                + chocolateBarType.ChocolateTypeName + " содержание какао: " + percentChocolate + ", вес:"+ sweetWeight + ", стоимость:" + sweetPrice;
+                + chocolateBarType.ChocolateTypeName + " содержание какао: " + percentChocolate + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;
     }
 }

@@ -8,14 +8,6 @@ import java.util.Random;
 
 public class SweetsFabric {
 
-    public final String fabricName;
-
-    static {
-
-        ChupaChups.setBrendTaxChupaChups(8); // где стоить устанавливать производственные коифициены;
-        Candy.setIndexWeightCandy(2.5);
-    }
-
     static List<? extends Candy> candyList = Arrays.asList(
             new Candy("Лемонный сад", 2.45, CandyTasteType.LEMON, CandySizeType.MEDIUM),
             new Candy("Лемонный сад", 2.75, CandyTasteType.LEMON, CandySizeType.BIG),
@@ -31,7 +23,6 @@ public class SweetsFabric {
             new ChupaChups(6.3, CandyTasteType.Milk),
             new ChupaChups(6, CandyTasteType.WATERMELON)
     );
-
     static List<? extends ChocolateBar> chocolateSweetList = Arrays.asList(
             new ChocolateBar("Аленка", 35.1, 100, 48.5, ChocolateType.MILK_CHOCOLATE, 33),
             new ChocolateBar("Бабаевский горький", 27.5, 100, 42, ChocolateType.BLACK_CHOCOLATE, 56),
@@ -41,6 +32,14 @@ public class SweetsFabric {
             new ChocolateSweet("Черный барон", 25, 10.5, 17.8, ChocolateType.BLACK_CHOCOLATE, 58, "Капучино"),
             new ChocolateSweet("Шоко-Моко", 37, 18.5, 19.5, ChocolateType.BLACK_CHOCOLATE, 48, "Кофейный мусс")
     );
+
+    static {
+
+        ChupaChups.setBrendTaxChupaChups(8); // где стоить устанавливать производственные коифициены;
+        Candy.setIndexWeightCandy(2.5);
+    }
+
+    public final String fabricName;
 
     public SweetsFabric(String fabricName) {
         this.fabricName = fabricName;

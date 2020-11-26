@@ -17,6 +17,14 @@ public class Sweets implements Validate {
         this.sweetPrice = sweetPrice;
     }
 
+    public static Comparator<? super Sweets> comparatorBySweetPrice() {
+        return (o1, o2) -> (int) (o1.getSweetPrice() - o2.getSweetPrice());  // причина приведения типа и как минимизировать погрешности при расчетах если double
+    }
+
+    public static Comparator<? super Sweets> comparatorBySweetSugar() {
+        return (o1, o2) -> (int) (o1.getAmountSugar() - o2.getAmountSugar());  // причина приведения типа и как минимизировать погрешности при расчетах если double
+    }
+
     public String getName() {
         return name;
     }
@@ -32,16 +40,6 @@ public class Sweets implements Validate {
     public double getSweetPrice() {
         return sweetPrice;
     }
-
-
-    public static Comparator<? super Sweets> comparatorBySweetPrice() {
-        return (o1, o2) -> (int)(o1.getSweetPrice() - o2.getSweetPrice());  // причина приведения типа и как минимизировать погрешности при расчетах если double
-    }
-
-    public static Comparator<? super Sweets> comparatorBySweetSugar() {
-        return (o1, o2) -> (int)(o1.getAmountSugar() - o2.getAmountSugar());  // причина приведения типа и как минимизировать погрешности при расчетах если double
-    }
-
 
     @Override
     public boolean equals(Object o) {
