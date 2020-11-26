@@ -41,7 +41,7 @@ public class ChocolateSweet extends ChocolateBar {
     public String toString() {
         return "Шоколадная конфета:" + this.name + ", содержание сахара " + amountSugar + ", тип шоколада: "
                 + super.getChocolateType().ChocolateTypeName + ", содержание какао: " + super.getPercentChocolate()
-                + ", наполнитель: " + getSweetFiller();
+                + ", наполнитель: " + getSweetFiller() + ", вес:" + sweetWeight + ", стоимость" + sweetPrice;
 
     }
 }

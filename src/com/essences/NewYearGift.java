@@ -38,7 +38,7 @@ public class NewYearGift implements Validate {
         newYearGift.countOfSweets = newYearGift.listOfSweets.size();
         for (Sweets currentSweet : newYearGift.listOfSweets) {
             newYearGift.giftWeight += currentSweet.sweetWeight;
-            newYearGift.giftPrice += currentSweet.sweetPrice;
+            newYearGift.giftPrice  += currentSweet.sweetPrice;
         }
 
         return newYearGift;
@@ -65,6 +65,22 @@ public class NewYearGift implements Validate {
     }
 
 
+     public  void sortNewYearGiftByPrice() {
+         listOfSweets.sort(Sweets.comparatorBySweetPrice());
+     }
+
+    public  void sortNewYearGiftBySugar() {
+        listOfSweets.sort(Sweets.comparatorBySweetSugar());
+    }
+
+
+
+
+     public Sweets getSweetWithMaxSugar(){
+         listOfSweets.sort(Sweets.comparatorBySweetSugar());
+         return listOfSweets.get(listOfSweets.size()-1);
+     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,11 +97,10 @@ public class NewYearGift implements Validate {
         return Objects.hash(listOfSweets, giftWeight, giftPrice, countOfSweets);
     }
 
-
     @Override
     public String toString() {
         return "Новогодний подарок." + " Общий вес: " + giftWeight +
-                ", Стоимость подарска" + giftPrice + ", колличество сладостей: " + countOfSweets;
+                ", Стоимость подарка: " + giftPrice + ", колличество сладостей: " + countOfSweets;
     }
 
     @Override

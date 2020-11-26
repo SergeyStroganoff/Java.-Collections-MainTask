@@ -9,17 +9,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class DayShift {
+public class MoskovFires {
 
     public static void main(String[] args) throws IOException {
 
-        GiftFabric giftFabric = new GiftFabric("ООО \"Фабрика новогодних подарков\"");
+        GiftFabric giftFabric = new GiftFabric("ООО \"Фабрика новогодних подарков - Московские огни\"");
         SweetsFabric sweetsFabric = new SweetsFabric("Фабрика Красный Октябрь");
 
 
         Double giftWeight = 0.0;
 
-        System.out.println("Дневная смена приступает к работе");
         System.out.println("Введите предельный вес подарков в граммах");
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -37,20 +36,20 @@ public class DayShift {
             giftFabric.arrayNewYearGift.add(giftFabric.makeGiftByWeight(sweetsFabric, giftWeight));
         }
 
+
         System.out.println("Тестовая валидация подарка:");
+        giftFabric.arrayNewYearGift.get(0).sortNewYearGiftByPrice();
         giftFabric.arrayNewYearGift.get(0).unpackAndValidate();
         List<Sweets> arraySweetsOfNewYearGift = giftFabric.arrayNewYearGift.get(0).getListOfSweets();
         System.out.println("В подарке имется конфеты:");
 
-        for (Sweets sweet:arraySweetsOfNewYearGift) {
-
+        for (Sweets sweet : arraySweetsOfNewYearGift) {
             System.out.println(sweet.toString());
-
         }
 
-
-
-
+        System.out.println("Конфета с самым большим содержанием сахара: " + giftFabric.arrayNewYearGift.get(0).
+                getSweetWithMaxSugar().
+                toString());
 
     }
 }
