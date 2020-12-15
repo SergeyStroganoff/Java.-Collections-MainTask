@@ -22,7 +22,7 @@ public class Sweets implements Validate {
     }
 
     public static Comparator<? super Sweets> comparatorBySweetSugar() {
-        return (o1, o2) -> (int) (o1.getAmountSugar() - o2.getAmountSugar());  // причина приведения типа и как минимизировать погрешности при расчетах если double
+        return (o1, o2) -> (int) (o1.getAmountSugar() - o2.getAmountSugar());  // то же самое...
     }
 
     public String getName() {

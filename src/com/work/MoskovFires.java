@@ -28,7 +28,7 @@ public class MoskovFires {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
-            System.out.println("Вы ввели некоректный вес подарка");
+            System.out.println("Вы ввели не корректный вес подарка");
             throw e;
         }
 
@@ -41,7 +41,7 @@ public class MoskovFires {
         giftFabric.arrayNewYearGift.get(0).sortNewYearGiftByPrice();
         giftFabric.arrayNewYearGift.get(0).unpackAndValidate();
         List<Sweets> arraySweetsOfNewYearGift = giftFabric.arrayNewYearGift.get(0).getListOfSweets();
-        System.out.println("В подарке имется конфеты:");
+        System.out.println("В подарке имеются конфеты:");
 
         for (Sweets sweet : arraySweetsOfNewYearGift) {
             System.out.println(sweet.toString());

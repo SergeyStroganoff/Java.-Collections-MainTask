@@ -17,9 +17,9 @@ public class GiftFabric {
         GiftFabricName = giftFabricName;
     }
 
-    public NewYearGift makeGiftByWeight(SweetsFabric sweetsFabric, double giftWeight) {   // статический метод или создвать экземляр фабрики
+    public NewYearGift makeGiftByWeight(SweetsFabric sweetsFabric, double giftWeight) {   // статический метод или создавать экземпляр фабрики
 
-        if (giftWeight <= 0) return null; // что лучьше, возвращать null, exception, или устанавливать свой вес. ?
+        if (giftWeight <= 0) return null; // что лучше, возвращать null, exception, или устанавливать свой вес. ?
         List<Sweets> tempListSweets = new ArrayList<>();
         Random randomSweet = new Random();
         double weight = 0;
@@ -37,7 +37,7 @@ public class GiftFabric {
 
     public NewYearGift makeGiftByPrice(SweetsFabric sweetsFabric, double giftPrice) {
 
-        if (giftPrice <= 0) return null; // что лучьше, возвращать null, exception, или устанавливать свой вес. ?
+        if (giftPrice <= 0) return null; // что лучше, возвращать null, exception, или устанавливать свой вес. ?
         List<Sweets> tempListSweets = new ArrayList<>();
         Random randomSweet = new Random();
         double currentSweetPrice = 0;

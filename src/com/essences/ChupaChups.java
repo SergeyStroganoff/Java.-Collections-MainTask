@@ -5,7 +5,7 @@ public class ChupaChups extends Candy {
     private static int brendTaxChupaChups;
 
     public ChupaChups(double sweetPrice, CandyTasteType tasteOfCandy) {
-        super(sweetPrice + brendTaxChupaChups, tasteOfCandy);    // вычесления в конструкторе
+        super(sweetPrice + brendTaxChupaChups, tasteOfCandy);    // вычисления в конструкторе
     }
 
     public static void setBrendTaxChupaChups(int brendTaxChupaChups) {
@@ -19,6 +19,3 @@ public class ChupaChups extends Candy {
     }
 }
 
-
-//return "Чупа чупс" + ", вкус:" + this.tasteOfCandy.CandyTasteTypeName + ", размер:" + this.candySizeType.CandySizeTypeWeightName +
-//        ", содержание сахара:" + amountSugar + ", вес:" + sweetWeight + ", стоимость:" + sweetPrice;
